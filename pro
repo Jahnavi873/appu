@@ -15,6 +15,26 @@ struct Node* createNode(int data) {
     newNode->next = NULL;
     return newNode;
 }
+// Function to insert a new element at the beginning of the singly linked list
+void insertAtFirst(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+    newNode->next = *head;
+    *head = newNode;
+}
+
+// Function to insert a new element at the end of the singly linked list
+void insertAtEnd(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+    struct Node* temp = *head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
 
 
 
