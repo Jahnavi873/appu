@@ -17,5 +17,23 @@ void insertAtPosition(struct Node** head, int data, int position) {
     newNode->next = temp->next;
     temp->next = newNode;
 }
+// Function to delete the first node of the singly linked list
+void deleteFromFirst(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    *head = temp->next;
+    free(temp);
+}
 
+// Function to delete the last node of the singly linked list
+void deleteFromEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    if (temp->next == NULL) {
 
