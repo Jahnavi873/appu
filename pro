@@ -7,7 +7,7 @@ bbbbbbbbbbbb3333333333333333333
     while (temp->next->next != NULL) {
         temp = temp->next;
     }
-    free(temp->next);
+    
     temp->next = NULL;
 }
 
