@@ -1,3 +1,5 @@
+
+bbbbbbbbbbbb3333333333333333333
 *head = NULL;
         return;
     }
@@ -21,5 +23,19 @@ void deleteAtPosition(struct Node** head, int position) {
     }
     for (int i = 0; temp != NULL && i < position - 1; i++) {
         temp = temp->next;
+}
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of range\n");
+        return;
+    }
+    struct Node* next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
+}
 
+// Function to print the LinkedList
+void print(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
 
