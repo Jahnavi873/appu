@@ -1,41 +1,28 @@
 
-bbbbbbbbbbbbbbbbbbbbbbbbbb22222222222222222222222222222
-// Function to insert a new element at a specific position in the singly linked list
-void insertAtPosition(struct Node** head, int data, int position) {
-    struct Node* newNode = createNode(data);
-    if (position == 0) {
-        insertAtFirst(head,data);
-        return;
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb4444444444444444444444444444444
+temp = temp->next;
     }
-    struct Node* temp = *head;
-    for (int i = 0; temp != NULL && i < position - 1; i++) {
-        temp = temp->next;
-    }
-    if (temp == NULL) {
-        printf("Position out of range\n");
-        free(newNode);
-        return;
-    }
-    newNode->next = temp->next;
-    temp->next = newNode;
-}
-// Function to delete the first node of the singly linked list
-void deleteFromFirst(struct Node** head) {
-    if (*head == NULL) {
-        printf("List is empty\n");
-        return;
-    }
-    struct Node* temp = *head;
-    *head = temp->next;
-    free(temp);
+    printf("NULL\n");
 }
 
-// Function to delete the last node of the singly linked list
-void deleteFromEnd(struct Node** head) {
-    if (*head == NULL) {
-        printf("List is empty\n");
-        return;
-    }
-    struct Node* temp = *head;
-    if (temp->next == NULL) {
+// Driver Code
+int main() {
+    struct Node* head = NULL;
+
+    insertAtFirst(&head, 10);
+    printf("Linked list after inserting the node:10 at the beginning \n");
+    print(head);
+
+    printf("Linked list after inserting the node:20 at the end \n");
+    insertAtEnd(&head, 20);
+    print(head);
+
+    printf("Linked list after inserting the node:5 at the end \n");
+    insertAtEnd(&head, 5);
+    print(head);
+
+    printf("Linked list after inserting the node:30 at the end \n");
+    insertAtEnd(&head, 30);
+    print(head);
+
 
