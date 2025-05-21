@@ -1,7 +1,2 @@
-Jahnavi
-Appu
-Yashu
-Aarya
-Charu
-Mayank
+singular linked list
 
